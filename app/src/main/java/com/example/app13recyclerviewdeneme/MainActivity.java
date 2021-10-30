@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         ulkelerList.add("fas");
         ulkelerList.add("slovenya");
         ulkelerList.add("hollanda");
-
+        ulkelerList.add("canada");
 
         adapter = new BasitRVAdapter(this, ulkelerList);
 
