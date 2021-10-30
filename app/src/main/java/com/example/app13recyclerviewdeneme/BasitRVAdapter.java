@@ -23,6 +23,7 @@ public class BasitRVAdapter extends RecyclerView.Adapter<BasitRVAdapter.CardView
     }
 
     //kart tasarımını temsil eden sınıf
+    //aynı anda adapter olan yer burası, bu adapter sınıf ana sınıfa extend edilmelidir.
     public class CardViewTasarimNesneleriniTutucu extends RecyclerView.ViewHolder{
         public TextView satirYazi;
         public CardView satirCardView;
@@ -52,7 +53,7 @@ public class BasitRVAdapter extends RecyclerView.Adapter<BasitRVAdapter.CardView
         holder.satirCardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast toast = Toast.makeText(mContext, "Seçtiğiniz Ülke : " + ulke, Toast.LENGTH_SHORT).show();
+                Toast.makeText(mContext, "Seçtiğiniz Ülke : " + ulke, Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -65,3 +66,20 @@ public class BasitRVAdapter extends RecyclerView.Adapter<BasitRVAdapter.CardView
 
 
 }
+
+/*
+1. BasitRVAdapter class'ını oluştur.
+2. bir context oluştur ve veri kümesi oluştur. (mContext, ulkelerDisaridanGelenList)
+3. bu sınıfın (BasitRVAdapter) dolu constructor'ını tanımla
+4. Card tasarımının içerisindeki görsel nesneleri temsilen yeni bir sınıf oluştur (CardViewTasarimNesneleriniTutucu)
+5. bu sınıfı (CardViewTasarimNesneleriniTutucu) ana sınıfa (BasitRVAdapter) extend et
+6. extend edince 3 ayrı method implement edilmesi mecburidir.
+6.1. onCreateViewHolder methodu ile cart_tasarim xml'ini inflate edeceqiz,
+     return ederken CardViewTasarimNesneleriniTutucu sınıfının cunstocter'ını çağıracağız.
+6.2. onBindViewHolder methodu veri kümesinden veriyi alıp cart view'a atayacak,
+     varsa kartview'ın tıklanma özelliği burada çalıştırılacak.
+6.3. getItemCount methodu, kaç adet veri olduğunu bulacak, kaç tane kartview oluşturulacak
+     getItemCount methodu onBindViewHolder methodunu o sayı kadar çalıştıracak
+
+
+*/
