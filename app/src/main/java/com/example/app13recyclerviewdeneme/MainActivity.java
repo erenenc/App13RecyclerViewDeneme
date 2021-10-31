@@ -3,8 +3,10 @@ package com.example.app13recyclerviewdeneme;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import android.os.Bundle;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -22,7 +24,9 @@ public class MainActivity extends AppCompatActivity {
         rv = findViewById(R.id.rv);
         rv.setHasFixedSize(true);
 
-        rv.setLayoutManager(new LinearLayoutManager(this));
+        //rv.setLayoutManager(new LinearLayoutManager(this));
+        //rv.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
+        rv.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.HORIZONTAL));
 
         ulkelerList = new ArrayList<>();
         ulkelerList.add("türkiye");

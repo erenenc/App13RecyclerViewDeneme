@@ -23,6 +23,17 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+            <ImageView
+                android:id="@+id/noktaResim"
+                android:layout_width="62dp"
+                android:layout_height="56dp"
+                android:layout_marginEnd="8dp"
+                android:scaleType="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/resim_ucnokta" />
+
             <TextView
                 android:id="@+id/satirYazi"
                 android:layout_width="wrap_content"
